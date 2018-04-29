@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Angular JS Tutorial HTML Page </title>
+    <script src="lib/angular.min.js"></script>
+    <script src="javascript/appServices.js"></script>
+    <link href="Style.css" rel="stylesheet"/>
+    <script src="services/factoryService.js"></script>
+    <script src="services/serviceService.js"></script>
+
+
+</head>
+<body ng-app="myApp">
+<div ng-controller="myCtrl">
+
+    <p> Value From First Ctrl factory : {{value}}</p>
+    <p> Value From First Ctrl Service : {{value1}}</p>
+
+
+
+</div>
+
+<div ng-controller="myCtrl1">
+    <p> Value From Second Ctrl factory: {{value}}</p>
+    <p> Value From Second Ctrl service: {{value1}}</p>
+
+    <p> Value From Second Ctrl service: {{value2}}</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Angular JS Tutorial HTML Page </title>
+    <script src="lib/angular.min.js"></script>
+    <script src="javascript/app.js"></script>
+    <script src="javascript/filters.js"></script>
+    <link href="Style.css" rel="stylesheet"/>
+    <script src="services/stringService.js"></script>
+    <script src="javascript/directive.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+<!--<div>-->
+    <!--<p ng-repeat="n in emp">-->
+        <!--<span>Name:{{n.name}}</span>-->
+        <!--<span>Gender:{{n.gender}}</span>-->
+    <!--</p>-->
+<!--</div>-->
+
+<div>
+    <p>Country Name : {{country.name}}</p>
+    <img ng-src="{{country.flag}}" alt="India-Flag.png" >
+</div>
+
+
+<div my-directive></div>
+
+
+</body>
+</html>

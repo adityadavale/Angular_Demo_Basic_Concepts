@@ -1,0 +1,9 @@
+{
+  "emp" : [
+    {"name": "Aditya", "gender": "Male",  "salary": "5000.457"},
+    {"name": "Anup", "gender": "Male",  "salary": "12300.7"},
+    {"name": "Komal", "gender": "female",  "salary": "999900.89"},
+    {"name": "Swapnil", "gender": "Male",  "salary": "9900.89"},
+    {"name": "Ketan", "gender": "Male",  "salary": "998940.89"}
+  ]
+}

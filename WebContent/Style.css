@@ -1,0 +1,30 @@
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+
+}
+
+td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+th {
+    border: 1px solid black;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#leftSide {
+    width: 50%;
+    height: 300px;
+    float: left;
+}
+
+#rightSide {
+    width: 50%;
+    height: 100px;
+    float: left;
+}
+
+

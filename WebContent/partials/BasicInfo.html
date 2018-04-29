@@ -1,0 +1,82 @@
+<h2 align="left">Employee Information</h2>
+
+<h3>Use of filters,Sorting:</h3>
+
+Sorting By : <select ng-model="sortColumn">
+    <option value="name"> Name ASC</option>
+    <option value="dob"> DOB ASC</option>
+    <option value="+salary"> Salary ASC</option>
+    <option value="-salary"> Salary DSC</option>
+</select>
+<br>
+<br>
+
+Rows To Show : <input type="number" ng-model="rowsLimit" min="0" max="5" step="1">
+<br><br>
+
+Search : <input type="text" ng-model="searchText" placeholder="Search Employees">
+<br><br>
+
+Hide Column : <input type="checkbox" ng-model="hideSalary">
+<br><br>
+
+<div>
+    <br>
+    <h4>Service Call Example</h4>
+    <input type="text" ng-model="inputText">
+    <input type="text" ng-model="outputText">
+    <input type="button" ng-click="processString(inputText)" value="ProcessString">
+</div>
+
+<div style="width:100%">
+    <div id="leftSide">
+
+        <h4>Employee Table From Scope </h4>
+        <table>
+            <thead>
+            <tr>
+                <th ng-click="sortData('name')">Name</th>
+                <th ng-click="sortData('dob')">DOB</th>
+                <th ng-click="sortData('gender')">Gender</th>
+                <th ng-click="sortData('salary')">Salary</th>
+                <th ng-click="sortData('salary')">Salary(Currency)</th>
+                <th ng-click="sortData('salary')" ng-hide="hideSalary">Salary(roundValueFilter)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="e in emp |orderBy:sortColumn:reverseSort |limitTo:rowsLimit |filter:searchText">
+                <td>{{e.name |uppercase}}</td>
+                <td>{{e.dob|date:"dd/MM/yyyy"}}</td>
+                <td>{{e.gender|lowercase}}</td>
+                <td>{{e.salary|number:2}}</td>
+                <td>{{e.salary|currency:"$":1}}</td>
+                <td ng-hide="hideSalary">{{e.salary | roundValueFilter}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="rightSide">
+        <h4>Employee Table From Json Object </h4>
+        <table>
+            <thead>
+            <tr>
+                <th ng-click="sortData('name')">Name</th>
+                <th ng-click="sortData('gender')">Gender</th>
+                <th ng-click="sortData('salary')">Salary</th>
+                <th ng-click="sortData('salary')" ng-hide="hideSalary">Salary(roundValueFilter)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="e in employeeData |orderBy:sortColumn:reverseSort |limitTo:rowsLimit |filter:searchText">
+                <td>{{e.name |uppercase}}</td>
+                <td>{{e.gender|lowercase}}</td>
+                <td>{{e.salary|number:2}}</td>
+                <td ng-hide="hideSalary">{{e.salary | roundValueFilter}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+</div>
+<br>
